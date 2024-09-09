@@ -3,7 +3,7 @@
 session_start();
 
 // Database connection
-$servername = "localhost";  // Change this to your database server
+$servername = "127.0.0.1";  // Change this to your database server
 $username = "root";         // Change this to your MySQL username
 $password = "password@123"; // Change this to your MySQL password
 $dbname = "test";           // Your database name
