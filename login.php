@@ -5,8 +5,8 @@ session_start();
 // Database connection
 $servername = "localhost";  // Change this to your database server
 $username = "root";         // Change this to your MySQL username
-$password = "password@123";             // Change this to your MySQL password
-$dbname = "test";       // Your database name
+$password = "password@123"; // Change this to your MySQL password
+$dbname = "test";           // Your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,7 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows > 0) {
         // Login successful
         $_SESSION['username'] = $user;
-        echo "Login successful! Welcome, " . $user;
+        
+        // Redirect to welcome page
+        header('Location: welcome.php');
+        exit;
     } else {
         // Login failed
         echo "Invalid username or password.";
